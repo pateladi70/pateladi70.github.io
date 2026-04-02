@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype - Aditya Patel</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-secondary: #f5f5f7;
+      --text-primary: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --border-color: #d2d2d7;
+      --accent: #0071e3;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-secondary); color: var(--text-primary); }
+
+    .page-header {
+      padding: 24px 40px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page-header h1 { font-size: 28px; letter-spacing: -0.5px; font-weight: 800; }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+    }
+    .section-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .prototype-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 64px;
+      align-items: start;
+    }
+    .prototype-layout > div:first-child video {
+      width: 100%;
+      max-height: 480px;
+      border-radius: 12px;
+      display: block;
+      object-fit: contain;
+    }
+    .instructions {
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .tasks-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .task-list { list-style: none; }
+    .task-list li {
+      padding: 8px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+    .task-list li .step {
+      font-weight: 600;
+      color: var(--accent);
+      margin-right: 4px;
+    }
+    .task-list li .action {
+      background: #eef2ff;
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--accent);
+    }
+    .divider {
+      height: 1px;
+      background: var(--border-color);
+      margin-bottom: 48px;
+    }
+    .live-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .live-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #2e7d32;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .live-hint {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .figma-embed {
+      width: 100%;
+      height: 700px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+    @media (max-width: 900px) {
+      .prototype-layout { grid-template-columns: 1fr; gap: 32px; }
+      .content { padding: 0 16px 40px; }
+      .page-header { padding: 20px 16px; }
+      .figma-embed { height: 480px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Prototype</h1>
+  </div>
+
+  <div class="content">
+    <div class="prototype-layout">
+      <div>
+        <p class="section-label">Walkthrough</p>
+        <video src="../assets/files/Prototype.mp4" controls playsinline></video>
+      </div>
+      <div>
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Usability Test</h3>
+        <p class="instructions">
+          ℹ️ Watch the walkthrough video, then use the <strong>live prototype</strong> below to complete each task. Think aloud — there are no wrong answers.
+        </p>
+        <p class="tasks-title">Tasks</p>
+        <ol class="task-list">
+          <li><span class="step">1.</span> Click <span class="action">Login</span> to sign in.</li>
+          <li><span class="step">2.</span> You'll land on the <strong>Dashboard</strong>.</li>
+          <li><span class="step">3.</span> Click <span class="action">Start Morning Review</span> to begin.</li>
+          <li><span class="step">4.</span> You'll be taken to the <strong>Review Screen</strong>.</li>
+          <li><span class="step">5.</span> Click the <span class="action">Risk</span> button.</li>
+          <li><span class="step">6.</span> You'll see the <strong>Risk Detail</strong> screen.</li>
+          <li><span class="step">7.</span> Click <span class="action">Drill</span> to send a drill request.</li>
+          <li><span class="step">8.</span> Review employee completed &amp; uncompleted tasks.</li>
+          <li><span class="step">9.</span> Click <span class="action">Send Reminder</span> to email the employee.</li>
+          <li><span class="step">10.</span> Send the request email to notify of the re-assigned task.</li>
+          <li><span class="step">11.</span> You’ll see a <strong>Confirmation</strong> screen.</li>
+          <li><span class="step">12.</span> Click <span class="action">Log Out</span> to return to the login screen.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="live-header">
+      <h2>Live Prototype</h2>
+      <span class="live-badge">Interactive</span>
+    </div>
+    <p class="live-hint">Click through the screens below to explore the full prototype. Use the sidebar to navigate between flows.</p>
+    <iframe class="figma-embed" src="https://embed.figma.com/proto/1B1YhsDTfmRylADbVKzuVL/Management-Prototype?node-id=19-3&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A3&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+  </div>
+
+</body>
+</html>

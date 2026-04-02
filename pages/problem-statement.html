@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problem Statement - Aditya Patel</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .doc-page {
+      min-height: 100vh;
+      background: var(--bg-secondary);
+      padding: 40px 0;
+    }
+
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+
+    .doc-title {
+      font-size: 32px;
+      letter-spacing: -0.5px;
+    }
+
+    .doc-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .doc-button {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      padding: 16px;
+      min-height: 320px;
+    }
+
+    .pdf-status {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .pdf-canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .doc-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .doc-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="doc-page">
+    <div class="container">
+      <div class="doc-header">
+        <h1 class="doc-title">Problem Statement</h1>
+        <div class="doc-actions">
+          <a class="doc-button" href="../index.html">Back to Portfolio</a>
+          <a class="doc-button" href="../assets/files/statement.pdf" download>Download PDF</a>
+        </div>
+      </div>
+      <div class="pdf-viewer">
+        <div class="pdf-status" id="statement-status">Loading problem statement preview...</div>
+        <div id="statement-pages"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.mjs" type="module"></script>
+  <script type="module">
+    const pdfUrl = "../assets/files/statement.pdf";
+    const statusNode = document.getElementById("statement-status");
+    const pagesNode = document.getElementById("statement-pages");
+
+    const { pdfjsLib } = globalThis;
+
+    if (!pdfjsLib) {
+      statusNode.textContent = "Unable to load the problem statement preview. Use the download button above.";
+    } else {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.min.mjs";
+
+      try {
+        const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+        statusNode.textContent = `Previewing ${pdf.numPages} page${pdf.numPages === 1 ? "" : "s"}`;
+
+        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
+          const page = await pdf.getPage(pageNumber);
+          const viewport = page.getViewport({ scale: 1.3 });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+
+          canvas.className = "pdf-canvas";
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          await page.render({ canvasContext: context, viewport }).promise;
+          pagesNode.appendChild(canvas);
+        }
+      } catch (error) {
+        statusNode.textContent = "Unable to render the problem statement preview. Use the download button above.";
+      }
+    }
+  </script>
+</body>
+</html>
