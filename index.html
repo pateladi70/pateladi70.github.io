@@ -1,6 +1,6 @@
 <!--
-  Aditya Patel - Portfolio
-  CSCE 190: Computing in the Modern World
+  Aditya Patel - Software Developer Portfolio
+  Updated: April 27, 2026
 -->
 
 <!DOCTYPE html>
@@ -8,253 +8,354 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Patel - Portfolio</title>
+  <title>Aditya Patel — Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
 
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">aditya<span></span></a>
+      <ul class="nav-links">
+        <li><a href="#about" class="tab">About</a></li>
+        <li><a href="#projects" class="tab">Work</a></li>
+        <li><a href="#skills" class="tab">Skills</a></li>
+        <li><a href="#contact" class="tab">Contact</a></li>
+        <li><a href="assets/files/Aditya's%20Resume.pdf" class="tab" target="_blank">Resume <ion-icon name="document-text-outline"></ion-icon></a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
+      <p class="hero-eyebrow">// hello, world — I'm</p>
       <h1 class="hero-name">Aditya Patel</h1>
-      <p class="hero-subtitle">CSCE 190: Computing in the Modern World</p>
+      <p class="hero-tagline">Software Developer</p>
+      <p class="hero-mission">Developing real-world web &amp; app solutions &mdash; from requirements to deployment. Passionate about building scalable, usable technology.</p>
+      <br />
+      <a href="assets/files/Aditya's%20Resume.pdf" class="btn btn-primary" target="_blank">
+        Download Resume <ion-icon name="arrow-down-outline"></ion-icon>
+      </a>
     </div>
     <div class="scroll-hint">
-      <span>Scroll to explore</span>
+      <span>scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 
   <!-- About -->
-  <section class="section about-section">
+  <section class="section about-section" id="about">
     <div class="container">
-      <h2 class="section-title">About</h2>
-      <div class="about-content">
-        <p>
-          As a student in CSCE 190: Computing in the Modern World, I'm dedicated to exploring 
-          the intersection of technology and human-centered design. My focus is on creating 
-          solutions that are not only functional but also intuitive and elegant.
-        </p>
-        <p>
-          I believe in the power of clean design and thoughtful engineering to solve real-world 
-          problems and improve everyday experiences.
-        </p>
+      <div class="section-header reveal">
+        <span class="section-num">01 — about</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <img src="assets/images/Aditya.jpg" alt="Aditya Patel" class="about-photo" />
+        <div class="about-text">
+          <p>
+            Hi, I'm <strong>Aditya Patel</strong> &mdash; a Software Developer with a focus on clean architecture and maintainability. I'm driven by the belief that great technology should feel effortless. I enjoy taking projects all the way from requirements through to full deployment.
+          </p>
+          <p>
+            My interests span <strong>backend development</strong>, <strong>applied AI</strong>, and <strong>product engineering</strong>. I thrive in collaborative environments and am always looking for opportunities to build products that make a meaningful impact.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-   <!-- Problem Statement Assignment -->
-  <section class="section projects-section">
+  <section class="section projects-section" id="projects">
     <div class="container">
-      <h2 class="section-title">Highlighted Projects</h2>
+      <div class="section-header reveal" style="margin-bottom: 24px;">
+        <span class="section-num">02 — work</span>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
 
+      <h3 style="font-family: var(--font-head); font-size: 28px; margin-bottom: 24px; color: var(--text-2); border-bottom: 2px solid #000; padding-bottom: 8px;">Live & In-Development</h3>
       <div class="projects-grid">
+        <article class="project-card reveal reveal-delay-1">
+          <div class="project-card-inner">
+            <div class="project-content">
+              <span class="project-eyebrow">Active Development</span>
+              <h3 class="project-title">
+                <a href="pages/get-moving-meals.html">Get Moving Meals</a>
+              </h3>
+              <p class="project-description">
+                Production meal planning platform serving 84+ users with 168 meal plans generated. Features automated Stripe billing, medication-safe filtering, and one-tap meal swaps.
+              </p>
+              <div class="project-tags" style="margin-top:auto; padding-top:16px;">
+                <span class="skill-tag">Live Product</span>
+                <span class="skill-tag">Payments</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <div class="project-card-inner">
+            <div class="project-content">
+              <span class="project-eyebrow">Live on Play Store</span>
+              <h3 class="project-title">
+                <a href="pages/bhagavad-gita.html">Bhagavad Gita &mdash; The Sacred Verses</a>
+              </h3>
+              <p class="project-description">
+                Offline-first Flutter app with 700 verses, Talk with Krishna AI, ambience mode, multi-language translations, and a refined spiritual reading experience.
+              </p>
+              <div class="project-tags" style="margin-top:auto; padding-top:16px;">
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">AI-Powered</span>
+              </div>
+            </div>
+          </div>
+        </article>
         
-        <article class="project-card">
+
+        <article class="project-card reveal reveal-delay-3">
+          <div class="project-card-inner">
+            <div class="project-content" style="background:#f4f4f4;">
+              <span class="project-eyebrow" style="border-color:#000;">Upcoming</span>
+              <h3 class="project-title">
+                <a href="pages/repwise.html">Repwise (In Dev)</a>
+              </h3>
+              <p class="project-description">
+                Upcoming workout application currently in development. Focused on providing optimized tracking, insights, and a seamless logging experience for serious lifters.
+              </p>
+              <div class="project-tags" style="margin-top:auto; padding-top:16px;">
+                <span class="skill-tag" style="background:#fff;">Mobile App</span>
+                <span class="skill-tag" style="background:#fff;">Fitness</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="font-family: var(--font-head); font-size: 28px; margin-top: 64px; margin-bottom: 24px; color: var(--text-2); border-bottom: 2px solid #000; padding-bottom: 8px;">Case Studies</h3>
+      <div class="projects-grid">
+
+
+        
+        <article class="project-card reveal reveal-delay-1">
           <div class="project-card-inner">
             <div class="project-image">
               <a href="assets/files/statement.pdf">
                 <img class="project-image-doc" src="assets/images/problem.png" alt="Problem Statement Project" />
               </a>
             </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">
-              <a href="assets/files/statement.pdf">Problem Statement</a>
-            </h3>
-            <p class="project-description">
-              As technology becomes more advanced and integrated into everyday life, many people feel overwhelmed and unsure how to use it effectively.
-            </p>
+            <div class="project-content">
+              <h3 class="project-title">
+                <a href="assets/files/statement.pdf">Problem Statement</a>
+              </h3>
+              <p class="project-description">
+                As technology becomes more advanced and integrated into everyday life, many people feel overwhelmed and unsure how to use it effectively.
+              </p>
+            </div>
           </div>
         </article>
 
-        <!-- Group Personas -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-2">
           <div class="project-card-inner">
             <div class="project-image">
               <a href="assets/files/robert_kim_persona.pdf">
                 <img class="project-image-doc" src="assets/images/robert_kim.png" alt="Robert Kim Persona" />
               </a>
             </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">
-              <a href="assets/files/robert_kim_persona.pdf">Group Persona's</a>
-            </h3>
-            <p class="project-description">
-              A dedicated persona profile from the group that documents the background, goals,
-              frustrations, and how the persona would interact with the project.
-            </p>
+            <div class="project-content">
+              <h3 class="project-title">
+                <a href="assets/files/robert_kim_persona.pdf">Group Personas</a>
+              </h3>
+              <p class="project-description">
+                A dedicated persona profile documenting background, goals, frustrations, and how the persona interacts with the project.
+              </p>
+            </div>
           </div>
         </article>
 
-        <!-- Storyboard & Affinity Diagram -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-3">
           <div class="project-card-inner">
             <div class="project-image" style="overflow:hidden;">
               <a href="assets/files/Storyboard%20%26%20Affinity%20Diagram.pdf" style="display:block;overflow:hidden;width:100%;height:100%;">
                 <embed src="assets/files/Storyboard%20%26%20Affinity%20Diagram.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" style="width:100%;height:110%;pointer-events:none;overflow:hidden;" />
               </a>
             </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">
-              <a href="assets/files/Storyboard%20%26%20Affinity%20Diagram.pdf">Storyboard & Affinity Diagram</a>
-            </h3>
-            <p class="project-description">
-              A combined storyboard and affinity diagram that organizes research themes and illustrates
-              the user journey and interaction flow.
-            </p>
+            <div class="project-content">
+              <h3 class="project-title">
+                <a href="assets/files/Storyboard%20%26%20Affinity%20Diagram.pdf">Storyboard & Affinity Diagram</a>
+              </h3>
+              <p class="project-description">
+                A combined storyboard and affinity diagram that organizes research themes and illustrates the user journey.
+              </p>
+            </div>
           </div>
         </article>
 
-        <!-- Sketches -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-4">
           <div class="project-card-inner">
             <div class="project-image">
               <a href="assets/images/Sketches.png">
-                <img class="project-image-doc" src="assets/images/Sketches.png" alt="Sketches placeholder" />
+                <img class="project-image-doc" src="assets/images/Sketches.png" alt="Sketches" />
               </a>
             </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">
-              <a href="assets/images/Sketches.png">Sketches</a>
-            </h3>
-            <p class="project-description">
-              A sketches section prepared for multiple concept views from different personas and
-              scenarios.
-            </p>
+            <div class="project-content">
+              <h3 class="project-title">
+                <a href="assets/images/Sketches.png">Sketches</a>
+              </h3>
+              <p class="project-description">
+                Multiple concept sketches from different personas and scenarios exploring early design directions.
+              </p>
+            </div>
           </div>
         </article>
 
-        <!-- Prototypes -->
-        <article class="project-card">
+        <article class="project-card reveal reveal-delay-5">
           <div class="project-card-inner">
             <div class="project-image">
               <a href="pages/prototype.html">
                 <video src="assets/files/Prototype.mp4" muted autoplay loop playsinline style="width:100%;height:100%;object-fit:cover;pointer-events:none;"></video>
               </a>
             </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">
-              <a href="pages/prototype.html">Prototypes</a>
-            </h3>
-            <p class="project-description">
-              A prototypes section prepared for the polished concept screens and interactive design
-              deliverables.
-            </p>
+            <div class="project-content">
+              <h3 class="project-title">
+                <a href="pages/prototype.html">Prototypes</a>
+              </h3>
+              <p class="project-description">
+                Polished concept screens and interactive design deliverables for the final prototype.
+              </p>
+            </div>
           </div>
         </article>
-
       </div>
-    </div>
-  </section>
 
-  <!-- Team -->
-  <section class="section team-section">
-    <div class="container">
-      <h2 class="section-title">Team</h2>
-      <div class="team-grid">
-        
-        <!-- Member Card -->
-        <div class="team-card">
-          <div class="team-icon">
-            <i data-lucide="user-circle"></i>
-          </div>
-          <h3>Aditya Patel</h3>
-        </div>
-
-        <!-- Team  Card -->
-        <div class="team-card">
-          <div class="team-icon">
-            <i data-lucide="user-circle"></i>
-          </div>
-          <h3>Josh</h3>
-        </div>
-
-        <!-- Team Card -->
-        <div class="team-card">
-          <div class="team-icon">
-            <i data-lucide="user-circle"></i>
-          </div>
-          <h3>Aramis</h3>
-        </div>
-
-      </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section class="section skills-section">
+  <section class="section skills-section" id="skills">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
+      <div class="section-header reveal">
+        <span class="section-num">03 &mdash; skills</span>
+        <h2 class="section-title">My Toolkit</h2>
+      </div>
       <div class="skills-grid">
-        <div class="skill-card">
+
+        <div class="skill-card reveal reveal-delay-1">
           <div class="skill-icon">
-            <i data-lucide="palette"></i>
+            <ion-icon name="code-slash-outline"></ion-icon>
+          </div>
+          <h3>Development &amp; Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Terminal</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon">
+            <ion-icon name="color-palette-outline"></ion-icon>
           </div>
           <h3>Design</h3>
-          <p>User Interface Design, User Experience, Prototyping</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i data-lucide="code-2"></i>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Adobe XD</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">Prototyping</span>
+            <span class="skill-tag">Wireframing</span>
           </div>
-          <h3>Development</h3>
-          <p>HTML, CSS, JavaScript, Problem Solving</p>
         </div>
-        <div class="skill-card">
+
+        <div class="skill-card reveal reveal-delay-3">
           <div class="skill-icon">
-            <i data-lucide="wrench"></i>
+            <ion-icon name="people-outline"></ion-icon>
           </div>
-          <h3>Tools</h3>
-          <p>Figma, Git, VS Code, Modern Frameworks</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i data-lucide="users"></i>
+          <h3>Soft Skills &amp; Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">English</span>
+            <span class="skill-tag">Gujarati</span>
+            <span class="skill-tag">Hindi</span>
+            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Critical Thinking</span>
           </div>
-          <h3>Soft Skills</h3>
-          <p>Communication, Collaboration, Critical Thinking</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="section contact-section">
+  <section class="section contact-section" id="contact">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
+      <div class="section-header reveal">
+        <span class="section-num">04 — contact</span>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
       <div class="contact-grid">
-        <div class="contact-card">
+
+        <div class="contact-card reveal reveal-delay-1">
           <div class="contact-icon">
-            <i data-lucide="mail"></i>
+            <ion-icon name="mail-outline"></ion-icon>
           </div>
           <h3>Email</h3>
-          <p>adityap@email.sc.edu</p>
+          <p><a href="mailto:adityap@email.sc.edu">adityap@email.sc.edu</a></p>
         </div>
-        <div class="contact-card">
+
+        <div class="contact-card reveal reveal-delay-2">
           <div class="contact-icon">
-            <i data-lucide="github"></i>
+            <ion-icon name="logo-github"></ion-icon>
           </div>
           <h3>GitHub</h3>
-          <p>github.com/pateladi70</p>
+          <p><a href="https://github.com/pateladi70" target="_blank" rel="noopener noreferrer">github.com/pateladi70</a></p>
         </div>
+
+        <div class="contact-card reveal reveal-delay-3">
+          <div class="contact-icon">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </div>
+          <h3>LinkedIn</h3>
+          <p><a href="https://linkedin.com/in/adityapatel" target="_blank" rel="noopener noreferrer">linkedin.com/in/adityapatel</a></p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <script>
-    lucide.createIcons();
-  </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Designed &amp; built by <span>Aditya Patel</span> &mdash; <span>2026</span></p>
+  </footer>
 
-</body>
+  <script>
+    // Scroll-reveal via IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Nav background on scroll
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script></body>
 </html>
